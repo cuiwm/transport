@@ -123,7 +123,7 @@ func (c *connCtx) WriteContext(ctx context.Context, b []byte) (int, error) {
 			// context canceled
 			if err := c.nextConn.SetWriteDeadline(veryOld); err != nil {
 				errSetDeadline.Store(err)
-				return
+				break
 			}
 			<-done
 			if err := c.nextConn.SetWriteDeadline(time.Time{}); err != nil {
