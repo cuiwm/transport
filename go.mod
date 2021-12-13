@@ -1,4 +1,4 @@
-module github.com/pion/transport
+module github.com/cuiwm/transport
 
 go 1.12
 
